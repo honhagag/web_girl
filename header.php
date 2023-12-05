@@ -56,7 +56,7 @@ include 'connect/config.php';
                     <div class="main-menu section" id="main-menu" name="Main Menu">
                         <div class="widget LinkList show-menu" data-version="2" id="LinkList74">
                             <ul id="main-menu-nav" role="menubar">
-                                <li><a href="/upload-img/index.php" role="menuitem">Upload Image</a>
+                                <li><a href="upload.php" role="menuitem">Upload Image</a>
                                 </li>
                             </ul>
                         </div>
