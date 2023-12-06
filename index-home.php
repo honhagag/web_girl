@@ -17,26 +17,42 @@
             <div class='main section' id='main' name='Main Posts'>
                 <div class='widget Blog' data-version='2' id='Blog1'>
                     <div class='blog-posts hfeed index-post-wrap'>
-                        <div class='blog-post hentry index-post'>
+                        
+                <?php
+                    $conn = new mysqli("localhost", "root", "", "ab");
+                    $sql = "SELECT * FROM image";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            $title = $row["author_img"];
+                            $img = "upload-img/".$row["path_img"];
+                            $snippet = $row["content_img"];
+                            $time = $row["date_time"];
+                            
+                    echo"
+                    <div class='blog-post hentry index-post'>
                             <div class='post-content'>
                                 <div class='post-image-wrap'>
                                     <a class='post-image-link'>
-                                        <img alt='#6 Tuyển tập gái Xinh phần 6 siêu hot' class='post-thumb'
-                                            src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgCadE4urvcTe6OzncdUu90w1t9Y5XrHb-uNXa0kVsYG58UA98jD2qO6TJzUxlRDO1jat0vEYZpARgA1zXpAr_0NeIPCjO-prSSidmBUB7ZaInjAdAW6keqXXQWq2zW5GwI0_oQnqhrkaj8/w480/37915582_266812517444027_9136811248791322624_n.jpg' />
+                                        <img alt='' class='post-thumb'
+                                            src='$img' />
                                         <div class='post-info'>
                                             <div class='post-info-inner'>
                                                 <h2 class='post-title'>
-                                                    #6 Tuyển tập gái Xinh phần 6 siêu hot
+                                                $title
                                                 </h2>
-                                                <span class='post-date published'
-                                                    datetime='2019-02-17T07:59:00-08:00'>tháng 2 17, 2019</span>
-                                                <p class='post-snippet'>#6 Tuyển tập gái Xinh phần 6 siêu hot</p>
+                                                <span class='post-date published'>$time</span>
+                                                <p class='post-snippet'>  $snippet  </p>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                    </div>";
+                        }
+                    }
+                         
+              ?>
                     </div>
                 </div>
             </div>
@@ -58,4 +74,4 @@
 </div> -->
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js' type='text/javascript'></script>
 <script type="text/javascript" src="static/js/3754116945-widgets.js"></script>
-<?php require "end.php" ?>
+<?php include"end.php" ?>

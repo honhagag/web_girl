@@ -16,6 +16,7 @@ include 'connect/config.php';
     <meta content='VietNam Sexy - Sưu Tập Ảnh Gái Xinh' property='og:title' />
     <meta content='' property='og:description' />
     <link href="static/css/style.css" rel='stylesheet' />
+    <link href="static/css/form.css" rel='stylesheet' />
     <link rel="icon" href="img/icon.png" />
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
